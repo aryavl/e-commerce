@@ -1,39 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="Header" style="width: 1440px; height: 100px; position: relative">
-        <div class="Rectangle2" style="width: 1440px; height: 100px; left: 0px; top: 0px; position: absolute; background: white"></div>
-        <div class="Navbar" style="width: 1296.50px; height: 41px; left: 43.50px; top: 29px; position: absolute">
-          <div class="Group2" style="width: 430px; height: 24px; left: 461.50px; top: 9px; position: absolute">
-            <div class="Home" style="left: 0px; top: 0px; position: absolute; color: black; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Home</div>
-            <div class="Shop" style="left: 123px; top: 0px; position: absolute; color: black; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Shop</div>
-            <div class="About" style="left: 240px; top: 0px; position: absolute; color: black; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">About</div>
-            <div class="Contact" style="left: 364px; top: 0px; position: absolute; color: black; font-size: 16px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Contact</div>
-          </div>
-          <div class="Group1" style="width: 1296.50px; height: 41px; left: 0px; top: 0px; position: absolute">
-            <div class="MdiAccountAlertOutline" style="width: 28px; height: 28px; left: 1049.50px; top: 7px; position: absolute">
-              <div class="Vector" style="width: 23.33px; height: 18.67px; left: 2.33px; top: 4.67px; position: absolute; background: black"></div>
+<%- include('../header') -%>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="text-center pt-5" id="login">
+          <div class="container border py-5">
+            <div class="title">
+              <h2 class="font-weight-bold">Sign Up</h2>
             </div>
-            <div class="AkarIconsSearch" style="width: 28px; height: 28px; left: 1122.50px; top: 7px; position: absolute">
-              <div class="Vector" style="width: 22.17px; height: 22.17px; left: 2.33px; top: 2.33px; position: absolute; border: 1px black solid"></div>
-            </div>
-            <div class="AkarIconsHeart" style="width: 28px; height: 28px; left: 1195.50px; top: 7px; position: absolute">
-              <div class="Vector" style="width: 23.33px; height: 20.81px; left: 2.33px; top: 3.50px; position: absolute; border: 1px black solid"></div>
-            </div>
-            <div class="AntDesignShoppingCartOutlined" style="width: 28px; height: 28px; left: 1268.50px; top: 7px; position: absolute">
-              <div class="Vector" style="width: 24.53px; height: 22.06px; left: 1.67px; top: 3.55px; position: absolute; background: black"></div>
-            </div>
-            <div class="Frame168" style="width: 206px; height: 41px; left: 0px; top: 0px; position: absolute; justify-content: center; align-items: center; gap: 5px; display: inline-flex">
-              <img class="MeubelHouseLogos05" style="width: 50px; height: 32px" src="https://via.placeholder.com/50x32" />
-              <div class="Skinclinic" style="color: black; font-size: 34px; font-family: Montserrat; font-weight: 700; word-wrap: break-word">Meubles</div>
-            </div>
+            
+            <form action="" method="post" class="pt-3" id="'form">
+              <% if(locals.message) { %>
+              <div>
+                <p class="text-danger"><%= message %> </p>
+              </div>
+              <% } %>
+
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" name="name" required><br> 
+              </div>
+             
+              
+             
+              <div class="form-group">
+                <input type="email" id="email-error" class="form-control" placeholder="Email" name="email" required><br>
+              </div>
+              <div class="form-group">
+                <input type="number" id="phone-error" class="form-control" placeholder="Phone" name="phone" required><br>
+              </div>
+              <div class="form-group">
+                <input type="password" id="password-error" class="form-control" name="password" placeholder="Password"  required><br>
+              </div>
+              <div class="form-group">
+                <input type="password" id="confirm-password" class="form-control" onfocusout="confirmPassword()" name="confpassword" placeholder="Confirm Password" required><br>
+              </div>
+              
+                <div class="form-group">
+                  
+                  <button type="submit" class="btn btn-danger btn-block mt-3 text-capitalize" ">Sign Up</button>
+                 
+                  <a class="text-capitalize btn btn-light mt-3 rounded-3 text-decoration-none text-danger" href="/">Already have an account?Login here</a>
+                 
+                </div>
+                
+                  
+                 
+           
+            </form>
           </div>
         </div>
       </div>
-</body>
-</html>
+    </div>
+  </div>
+ <script src="/script/user-script.js"></script>
+
+<%- include('../footer') -%>

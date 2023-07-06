@@ -1,0 +1,8 @@
+<%- include('../header') -%>
+<% if(locals.user){%>
+
+    <h1>Welcome <%=user %> home </h1>
+<%}else{%>
+    <h1>Welcome home </h1>
+<%} %>
+<%- include('../footer') -%>

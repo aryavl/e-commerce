@@ -1,0 +1,19 @@
+<%- include('../header') -%>
+<div class="container">
+    <h1>OTP Verification</h1>
+    <form method="POST" action="">
+      <% if(locals.message){ %>
+        <div>
+          <p class="text-danger"><%= message %></p>
+        </div>
+        <% } %>
+        
+        <% if(locals.otp){%>
+        <input type="text" name="otp" placeholder="Enter OTP" /><br><br>
+        <%}else{ %>
+      <input type="tel" name="phone" placeholder="Enter registered number" /><br><br>
+      <% } %>
+      <button type="submit">Verify</button>
+    </form>
+  </div>
+<%- include('../footer') -%>

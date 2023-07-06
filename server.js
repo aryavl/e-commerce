@@ -1,10 +1,13 @@
 const express = require('express')
 const session = require('express-session')
 const path = require('path')
+const mongoose = require('mongoose')
 const userRoute = require('./routes/userRoute')
 const adminRoute = require('./routes/adminRoute')
 const app = express()
 
+app.set("view engine", "ejs")
+app.set("views", "./views/user")
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(function (req, res, next) {
@@ -27,9 +30,11 @@ app.use((req, res, next) => {
 
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/',userRoute)
-// app.use('/admin',adminRoute)
+// app.get('/',(req,res)=>{
+//   res.render('login')
+// })
+ app.use('/',userRoute)
+ app.use('/admin',adminRoute)
 
 
 app.listen(3002)
